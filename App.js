@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import Playlist from './components/playlist';
 
 const DOMAIN_API = 'http://192.168.8.117:4567'
 
@@ -18,20 +19,12 @@ export default function App() {
   useEffect(async () => {
     const resp = await fetch(`${DOMAIN_API}/playlist`);
     const s = await resp.json();
-    console.log(s)
     setSongs(s)
   }, []);
 
   return (
     <View style={styles.container}>
-      <View>
-        {
-          songs.map(function(song) {
-            return <Text>{song.artist} - {song.song}</Text>
-          })
-
-        }
-      </View>
+      <Playlist songs={songs}/>
       <Text>HOLA </Text>
       <Text>{artist}</Text>
       <Text>{title}</Text>
