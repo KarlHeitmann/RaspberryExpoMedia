@@ -13,7 +13,17 @@ export default function Playlist({songs}) {
       <Text>Playlist</Text>
         {
           songs.map(function(song, i) {
-            return <Text key={i}>{song.artist} - {song.song}</Text>
+            return <Text key={i}>
+              {song.artist} - {song.song}
+              <Button
+                onPress={async () => {
+                  const resp = await fetch(`${DOMAIN_API}/play?index=${i+1}`)
+                  const names = await resp.json();
+                  console.log("playing")
+                }}
+                title="Play"
+                />
+            </Text>
           })
 
         }
