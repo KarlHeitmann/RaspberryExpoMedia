@@ -12,15 +12,25 @@ export default function App() {
   const [status, setStatus] = useState("Sin titulo");
   const [songs, setSongs] = useState([]);
 
-  const statusFunc = (e) => {
-
+  const iniciar = async (e) => {
+    const resp = await fetch(DOMAIN_API)
+    const names = await resp.json();
+    setIsHungry(`Artista: ${names.artist}`)
+    setArtist(names.artist)
+    setTitle(names.title)
+    setStatus(names.status)
+    console.log(names)
+    //setIsHungry(false);
   }
 
   useEffect(async () => {
     const resp = await fetch(`${DOMAIN_API}/playlist`);
     const s = await resp.json();
     setSongs(s)
+    await iniciar()
   }, []);
+
+  console.log(" .  Hola....")
 
   return (
     <View style={styles.container}>
@@ -30,16 +40,7 @@ export default function App() {
       <Text>{title}</Text>
       <Text>HOLA Chao</Text>
       <Button
-        onPress={async () => {
-          const resp = await fetch(DOMAIN_API)
-          const names = await resp.json();
-          setIsHungry(`Artista: ${names.artist}`)
-          setArtist(names.artist)
-          setTitle(names.title)
-          setStatus(names.status)
-          console.log(names)
-          //setIsHungry(false);
-        }}
+        onPress={iniciar}
         disabled={!isHungry}
         title="Status"
       />
