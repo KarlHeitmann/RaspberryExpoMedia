@@ -13,8 +13,14 @@ export default function CurrentData({current_data}) {
   const percentage_progress = segundos_actuales / segundos_totales;
   return (
     <View>
-      <Text>Current Data</Text>
-      <Text>Progreso: {percentage_progress * 100}</Text>
+      <Text>{current_data.artist}-{current_data.title} -
+      {current_data.current_time}/{current_data.total_time}</Text>
+      <Text>Progreso: {Math.round(percentage_progress * 1000)/10}%</Text>
+      <Text>
+        {
+          ".....".repeat(percentage_progress * 10)
+        }
+      </Text>
     </View>
   )
 }
