@@ -6,6 +6,13 @@ const DOMAIN_API = 'http://192.168.8.117:4567'
 export default function Browse() {
   const [files, setFiles] = useState([])
 
+  const updateFiles = async(f) => {
+    const resp = await fetch(`${DOMAIN_API}/ls?folder=${f}`)
+    const files = await resp.json();
+    setFiles(files)
+
+  }
+
   useEffect(async() => {
     console.log("Browse")
     const resp = await fetch(`${DOMAIN_API}/ls`)
@@ -19,7 +26,11 @@ export default function Browse() {
       {
         files.map(function(file, i) {
           return <Text key={i}>
-            {file}
+            {
+              file.includes('.mp3') ? 
+              <Text>file</Text> : <Button onPress={(e) => {updateFiles(file)}} title={file} />
+            }
+            --- {file}
           </Text>
         })
       }
