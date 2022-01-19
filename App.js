@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Button, Text, View } from 'react-native';
 import Main from './screens/main';
+import BrowseScreen from './screens/browse_screen';
 
 
 const DOMAIN_API = 'http://192.168.8.117:4567'
@@ -12,8 +13,13 @@ function About({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>About Screen</Text>
       <Button
-        title="Go to Details"
+        title="Main"
         onPress={() => navigation.navigate('Main')}
+      />
+      <Text>....</Text>
+      <Button
+        title="Browse"
+        onPress={() => navigation.navigate('Browse')}
       />
     </View>
   );
@@ -27,6 +33,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="About" component={About} />
         <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="Browse" component={BrowseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )
