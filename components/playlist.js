@@ -5,7 +5,7 @@ import { Button, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-
 const DOMAIN_API = 'http://192.168.8.117:4567'
 
 export default function Playlist({songs}) {
-  console.log(songs)
+  // console.log(songs)
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'pink',
 
-    marginHorizontal: 10,
+    marginHorizontal: 1,
   },
   text: {
     fontSize: 42,
