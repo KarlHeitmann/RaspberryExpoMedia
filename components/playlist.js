@@ -4,7 +4,7 @@ import { Button, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-
 
 const DOMAIN_API = 'http://192.168.8.117:4567'
 
-export default function Playlist({songs}) {
+export default function Playlist({songs, current_item_playlist}) {
   // console.log(songs)
   return (
     <SafeAreaView style={styles.container}>
@@ -13,7 +13,7 @@ export default function Playlist({songs}) {
           <Text style={styles.text}>Playlist</Text>
             {
               songs.map(function(song, i) {
-                return <Text key={i}>
+                return <Text key={i} style={(i+1)==current_item_playlist ? styles.negrita : styles.normal}>
                   {song.artist} - {song.song}
                   <Button
                     onPress={async () => {
@@ -39,6 +39,12 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: StatusBar.currentHeight,
     paddingTop: 30,
+  },
+  negrita: {
+    fontWeight: "700"
+  },
+  normal: {
+    fontWeight: "100"
   },
   scrollView: {
     backgroundColor: 'pink',
