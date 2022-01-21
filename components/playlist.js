@@ -36,6 +36,7 @@ export default function Playlist({songs, current_item_playlist}) {
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%',
     flex: 1,
     paddingTop: StatusBar.currentHeight,
     paddingTop: 30,

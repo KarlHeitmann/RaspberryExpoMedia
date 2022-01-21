@@ -58,7 +58,9 @@ export default function Main() {
 
   return (
     <View style={styles.container}>
-      <Playlist songs={songs} current_item_playlist={Number(current_data.current_item_playlist)}/>
+      <Playlist
+        songs={songs} current_item_playlist={Number(current_data.current_item_playlist)}
+        />
       <CurrentData current_data={current_data}/>
       <Text>HOLA </Text>
       <Text>{artist}</Text>
