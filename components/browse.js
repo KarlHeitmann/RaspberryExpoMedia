@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Button, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-const DOMAIN_API = 'http://192.168.8.117:4567'
+import {DOMAIN_API} from '../config'
 
 export default function Browse() {
   const [files, setFiles] = useState([])
