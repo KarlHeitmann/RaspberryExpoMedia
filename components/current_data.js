@@ -5,7 +5,6 @@ import { Button, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-
 const DOMAIN_API = 'http://192.168.8.117:4567'
 
 export default function CurrentData({current_data}) {
-  console.log(current_data);
   const [min_total, seg_total] = current_data.total_time.split(':');
   const [min_current, seg_current] = current_data.current_time.split(':');
   const segundos_actuales = Number(min_current) * 60 + Number(seg_current);

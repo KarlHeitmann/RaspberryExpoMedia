@@ -7,13 +7,9 @@ export default function Browse() {
   const [files, setFiles] = useState([])
 
   const fetchFiles = async(f) => {
-    console.log("bla bla bla")
     const query_params = f == '' ? '' : `?folder=${f}`
-    console.log(query_params)
     const resp = await fetch(`${DOMAIN_API}/ls${query_params}`)
-    console.log(resp)
     const files_tmp = await resp.json();
-    console.log(files_tmp)
     return files_tmp
   }
 
