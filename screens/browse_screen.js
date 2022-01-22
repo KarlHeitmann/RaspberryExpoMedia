@@ -5,8 +5,7 @@ import { Button, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-
 export default function BrowseScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Browse</Text>
+        <View style={{ flex: 1, justifyContent: 'center' }}>
           <ScrollView style={styles.scrollView}>
             <Browse />
           </ScrollView>
@@ -18,7 +17,6 @@ export default function BrowseScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 30,
   },
   negrita: {
     fontWeight: "700"
@@ -29,7 +27,6 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'pink',
 
-    marginHorizontal: 1,
   },
   text: {
     fontSize: 42,

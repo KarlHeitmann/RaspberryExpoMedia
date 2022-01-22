@@ -4,12 +4,6 @@ import { Button, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-
 const DOMAIN_API = 'http://192.168.8.117:4567'
 
 export default function SongPlaylist({song, active, i}){
-  console.log(active)
-  if (active) {
-    console.log("negrita")
-  } else {
-    console.log("...")
-  }
   return (
     <View
       style={styles.container}

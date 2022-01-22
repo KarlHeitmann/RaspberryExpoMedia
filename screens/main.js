@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import CurrentData from '../components/current_data';
 import Playlist from '../components/playlist';
 
-const DOMAIN_API = 'http://192.168.8.117:4567'
+import {DOMAIN_API} from '../config'
 
 export default function Main() {
   const [isHungry, setIsHungry] = useState("NADA");
@@ -58,14 +58,10 @@ export default function Main() {
 
   return (
     <View style={styles.container}>
+      <CurrentData current_data={current_data}/>
       <Playlist
         songs={songs} current_item_playlist={Number(current_data.current_item_playlist)}
         />
-      <CurrentData current_data={current_data}/>
-      <Text>HOLA </Text>
-      <Text>{artist}</Text>
-      <Text>{title}</Text>
-      <Text>HOLA Chao</Text>
       <Button
         onPress={refrescar}
         disabled={!isHungry}

@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { Button, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import SongPlaylist from './song_playlist';
 
-const DOMAIN_API = 'http://192.168.8.117:4567'
+import {DOMAIN_API} from '../config'
 
 export default function Playlist({songs, current_item_playlist}) {
   // console.log(songs)
@@ -34,8 +34,6 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    paddingTop: 30,
   },
   negrita: {
     fontWeight: "700"
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
     fontWeight: "100"
   },
   scrollView: {
-    backgroundColor: 'pink',
+    backgroundColor: '#efefef',
 
     marginHorizontal: 1,
   },
