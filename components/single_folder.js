@@ -9,13 +9,16 @@ export default function SingleFolder({setFiles, fetchFiles, file}) {
     <View
       style={styles.container}
       >
-      <View
-        style={styles.item}
+      <ScrollView
+        horizontal={true}
+        style={styles.scrollHorizontal}
         >
-        <Text>
+        <Text
+          style={styles.itemText}
+        >
           {file}
         </Text>
-      </View>
+      </ScrollView>
       <View
         style={styles.item}
         >
@@ -26,6 +29,9 @@ export default function SingleFolder({setFiles, fetchFiles, file}) {
 }
 
 const styles = StyleSheet.create({
+  scrollHorizontal: {
+    width: '50%',
+  },
   container: {
     flexDirection: 'row',
     // alignItems: 'center'
@@ -38,5 +44,10 @@ const styles = StyleSheet.create({
   item: {
     flex: 1,
     paddingHorizontal: 10,
+  },
+  itemText: {
+    // flex: 1,
+    paddingHorizontal: 10,
+    flexShrink: 1
   },
 })
