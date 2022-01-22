@@ -65,7 +65,6 @@ export default function Browse() {
         </View>
       </View>
       <Text>{parent_folder}</Text>
-      <Text>AS>D</Text>
       {
         files.map(function(file, i) {
           return <Text key={i}>
