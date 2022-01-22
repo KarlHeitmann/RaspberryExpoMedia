@@ -69,7 +69,7 @@ export default function Browse() {
         files.map(function(file, i) {
           return <Text key={i}>
             {
-              file.includes('.mp3') ? 
+              file.toLowerCase().includes('.mp3') ? 
               <SingleFile addFile={addFile} file={file} /> : <SingleFolder setFiles={setFiles} fetchFiles={fetchFiles} file={file}/>
             }
           </Text>

@@ -37,5 +37,6 @@ const styles = StyleSheet.create({
   },
   item: {
     flex: 1,
+    paddingHorizontal: 10,
   },
 })

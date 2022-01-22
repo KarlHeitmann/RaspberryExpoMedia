@@ -6,6 +6,37 @@ import {DOMAIN_API} from '../config'
 export default function SingleFile({addFile, file}) {
 
   return (
-    <Button onPress={async(e) => {addFile(file)}} title={`Add ${file.split('/')[file.split('/').length - 1]}`}/>
+    <View
+      style={styles.container}
+      >
+      <View
+        style={styles.item}
+        >
+        <Text>
+          {file.split('/')[file.split('/').length - 1]}
+        </Text>
+      </View>
+      <View
+        style={styles.item}
+        >
+        <Button onPress={async(e) => {addFile(file)}} title={'Add'}/>
+      </View>
+    </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    // alignItems: 'center'
+    alignItems: 'center',
+    // alignItems: 'flex-end',
+    // justifyContent: 'space-between',
+    justifyContent: 'flex-end',
+    paddingVertical: 10,
+  },
+  item: {
+    flex: 1,
+    paddingHorizontal: 10,
+  },
+})
