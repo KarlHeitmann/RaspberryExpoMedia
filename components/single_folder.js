@@ -6,6 +6,9 @@ import {DOMAIN_API} from '../config'
 export default function SingleFolder({setFiles, fetchFiles, file}) {
 
   return (
-    <Button onPress={async(e) => {setFiles(await fetchFiles(file))}} title={file} />
+    <Text>
+      {file}
+      <Button onPress={async(e) => {setFiles(await fetchFiles(file))}} title="GO TO" />
+    </Text>
   )
 }
